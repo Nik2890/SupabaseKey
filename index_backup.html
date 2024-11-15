@@ -10,8 +10,7 @@
     <script>
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // const Database = iniSupabase();
-        let Database = iniSupabase();
-        let Antwort = '999';
+        let Database= iniSupabase();
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         function iniSupabase() {
@@ -32,35 +31,9 @@
                 email: Email_id,
                 password: pw_id,
             })
-            console.log("signInWithEmail");
-            readDB()
+            console.log("signInWithEmail")
         }
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-        async function readDB() {
-
-
-            const Datebank = 'cal_niko_text'
-
-            const { data, error } = await Database
-                .from('cal_niko_text')
-                .select('2025')  // Alle Spalten auswählen
-
-            let Antwort = data
-            localStorage.setItem('cal_niko_text_array', JSON.stringify(Antwort))
-
-            document.getElementById('Antwort_id').value = Antwort
-
-
-
-
-        }
-
-
-
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     </script>
 
@@ -70,14 +43,13 @@
 
     <form class="formLogin" id="formLogin">
 
-        <Input Id="emaiL_Input" value="nikolas.boeckelmann@googlemail.com"></Input>
-        <Input Id="pw_Input" value="Duhund01!"></Input>
-        <div class="formEmailInput">
-            <button
-                onclick="event.preventDefault(); signInWithEmail(document.getElementById('emaiL_Input').value, document.getElementById('pw_Input').value)">Login</button>
+        <Input Id = "emaiL_Input" value="nikolas.boeckelmann@googlemail.com"></Input>
+        <Input Id = "pw_Input" value="Duhund01!"></Input>
+        <div class="formEmailInput">  
+            <button onclick="event.preventDefault(); signInWithEmail(document.getElementById('emaiL_Input').value, document.getElementById('pw_Input').value)">Login</button>
         </div>
 
-        <input id="Antwort_id" type="text" value="leer">
-    </form>
 
+    </form>
+  
 </body>
